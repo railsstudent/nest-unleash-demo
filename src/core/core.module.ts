@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common'
-import { AppConfigService } from './services'
+import { AppConfigService, FeatureToggleService } from './services'
 
 @Module({
-  providers: [AppConfigService],
-  exports: [AppConfigService],
+  providers: [AppConfigService, FeatureToggleService],
+  exports: [AppConfigService, FeatureToggleService],
 })
 export class CoreModule {}
