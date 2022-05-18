@@ -31,7 +31,8 @@
     "joi": "^17.6.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^7.2.0"
+    "rxjs": "^7.2.0",
+    "unleash-client": "^3.13.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.0",
