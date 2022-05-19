@@ -20,4 +20,8 @@ export class AppConfigService {
   get appEnv(): string {
     return this.configService.get<string>('APP_ENV')
   }
+
+  get portNumber(): number {
+    return this.configService.get<number>('PORT')
+  }
 }
