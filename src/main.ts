@@ -1,4 +1,4 @@
-import { ValidationPipe } from '@nestjs/common'
+import { Logger, ValidationPipe } from '@nestjs/common'
 import { NestFactory } from '@nestjs/core'
 import * as express from 'express'
 import * as compression from 'compression'
@@ -8,6 +8,7 @@ import { AppModule } from './app.module'
 import { AppConfigService } from './core'
 
 async function bootstrap() {
+  const logger = new Logger('Main')
   const app = await NestFactory.create(AppModule)
   app.enableCors()
   app.use(helmet())
@@ -18,6 +19,8 @@ async function bootstrap() {
 
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }))
   const configService = app.get(AppConfigService)
-  await app.listen(configService.portNumber)
+  await app.listen(configService.portNumber, () =>
+    logger.log(`Listening to http://localhost:${configService.portNumber}....`),
+  )
 }
 bootstrap()

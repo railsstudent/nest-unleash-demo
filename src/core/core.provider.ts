@@ -8,7 +8,7 @@ export const FEATURE_TOGGLE_FACTORY = {
     const init = initialize({
       url: configService.featureToggleUrl,
       appName: configService.featureToggleAppName,
-      environment: configService.appEnv,
+      environment: configService.featureToggleEnv,
       customHeaders: { Authorization: configService.featureToggleApiToken },
     })
 
