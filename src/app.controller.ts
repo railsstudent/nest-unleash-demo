@@ -17,8 +17,8 @@ export class AppController {
   testFeatureToggle(): { i18nStatus: string; opinionOfVue: string } {
     const isTranslationEnabled = this.featureToggleService.isEnabled(FEATURE_FLAGS.IS_TRANSLATION_ENABLED)
     const isVueCool = this.featureToggleService.isEnabled(FEATURE_FLAGS.IS_VUE3_COOL)
-    this.logger.log('info', `isTranslationEnabled: ${isTranslationEnabled}`)
-    this.logger.log('info', `isVueCool: ${isVueCool}`)
+    this.logger.log(`isTranslationEnabled: ${isTranslationEnabled}`)
+    this.logger.log(`isVueCool: ${isVueCool}`)
 
     const i18nStatus = isTranslationEnabled ? 'i18n enabled' : 'i18n disabled'
     const opinionOfVue = isVueCool ? 'Vue3 + Vite is cool' : "Use Vue2 but I won't like it very much"
